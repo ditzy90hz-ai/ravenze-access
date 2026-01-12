@@ -29,13 +29,15 @@
 <form
   action="https://docs.google.com/forms/d/e/1FAIpQLSerpOaWgy9ixxV7XYGaOHq2RznAF2-v9f4RpK_nIB5sopxB1A/formResponse"
   method="POST"
-  target="_blank"
+  target="hidden_iframe"
+  onsubmit="submitted=true;"
 >
   <label>Nama Lengkap</label>
   <input
     name="entry.1859656423"
     type="text"
     placeholder="Masukkan nama lengkap"
+    required
   />
 
   <label>Codename</label>
@@ -43,18 +45,35 @@
     name="entry.1378749359"
     type="text"
     placeholder="Masukkan codename kamu"
+    required
   />
 
   <label>Alasan Bergabung</label>
   <textarea
     name="entry.1934636667"
     placeholder="Kenapa kamu mau gabung?"
+    required
   ></textarea>
 
   <button type="submit" class="btn submit">
     Ajukan Akses
   </button>
 </form>
+
+<iframe
+  name="hidden_iframe"
+  style="display:none;"
+  onload="if(submitted){afterSubmit();}"
+></iframe>
+
+<script>
+  let submitted = false;
+
+  function afterSubmit() {
+    document.getElementById("lockText").innerText =
+      "Form terkirim. Tunggu approval admin.";
+  }
+</script>
 
   <!-- INFO CARD -->
   <div class="card">
