@@ -19,80 +19,56 @@
       Akses grup hanya diberikan setelah pengisian formulir.
     </p>
 
-    <!-- LOCKED BUTTON -->
     <button id="waBtn" class="btn locked" disabled>
       🔒 Masuk Grup WhatsApp
     </button>
     <small id="lockText">Isi formulir untuk membuka akses</small>
   </div>
 
-<<form
-  id="accessForm"
-  action="https://docs.google.com/forms/d/e/1FAIpQLSerpOaWgy9ixxV7XYGaOHq2RznAF2-v9f4RpK_nIB5sopxB1A/formResponse"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="submitted=true;"
->
->
-  <label>Nama Lengkap</label>
-  <input
-    name="entry.1859656423"
-    type="text"
-    placeholder="Masukkan nama lengkap"
-    required
-  />
+  <!-- FORM -->
+  <form
+    id="accessForm"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSerpOaWgy9ixxV7XYGaOHq2RznAF2-v9f4RpK_nIB5sopxB1A/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted=true;"
+  >
 
-  <label>Codename</label>
-  <input
-    name="entry.1378749359"
-    type="text"
-    placeholder="Masukkan codename kamu"
-    required
-  />
+    <label>Nama Lengkap</label>
+    <input name="entry.1859656423" type="text" required>
 
-  <label>Alasan Bergabung</label>
-  <textarea
-    name="entry.1934636667"
-    placeholder="Kenapa kamu mau gabung?"
-    required
-  ></textarea>
+    <label>Codename</label>
+    <input name="entry.1378749359" type="text" required>
 
-  <button type="submit" class="btn submit">
-    Ajukan Akses
-  </button>
-</form>
+    <label>Alasan Bergabung</label>
+    <textarea name="entry.1934636667" required></textarea>
 
-<iframe
-  name="hidden_iframe"
-  style="display:none;"
-  onload="if(submitted){afterSubmit();}"
-></iframe>
+    <button type="submit" class="btn submit">Ajukan Akses</button>
+  </form>
 
-<script>
-  let submitted = false;
-</script>
+  <!-- IFRAME HIDDEN -->
+  <iframe
+    name="hidden_iframe"
+    style="display:none;"
+    onload="if(submitted){afterSubmit();}"
+  ></iframe>
 
-<script>
-  let submitted = false;
-
-  function afterSubmit() {
-    document.getElementById("lockText").innerText =
-      "Form terkirim. Tunggu approval admin.";
-  }
-</script>
-
-  <!-- INFO CARD -->
+  <!-- RULES -->
   <div class="card">
     <h2>Peraturan Grup</h2>
     <ul class="rules">
-      <li>Gunakan bahasa yang sopan dan profesional</li>
-      <li>Dilarang spam dan promosi tanpa izin</li>
-      <li>Hormati privasi anggota lain</li>
+      <li>Gunakan bahasa yang sopan</li>
+      <li>Dilarang spam</li>
+      <li>Hormati anggota</li>
       <li>Ikuti arahan admin</li>
     </ul>
   </div>
 
 </div>
+
+<script>
+  let submitted = false;
+</script>
 
 <script src="script.js"></script>
 </body>
