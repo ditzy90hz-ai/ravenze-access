@@ -26,11 +26,13 @@
     <small id="lockText">Isi formulir untuk membuka akses</small>
   </div>
 
-<form
+<<form
+  id="accessForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLSerpOaWgy9ixxV7XYGaOHq2RznAF2-v9f4RpK_nIB5sopxB1A/formResponse"
   method="POST"
   target="hidden_iframe"
   onsubmit="submitted=true;"
+>
 >
   <label>Nama Lengkap</label>
   <input
@@ -65,6 +67,10 @@
   style="display:none;"
   onload="if(submitted){afterSubmit();}"
 ></iframe>
+
+<script>
+  let submitted = false;
+</script>
 
 <script>
   let submitted = false;
