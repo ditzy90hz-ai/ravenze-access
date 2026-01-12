@@ -1,74 +1,44 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravenze.co Access</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravenze.co Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
+  <h1>Selamat Datang di Grup<br><span>Ravenze.co</span></h1>
+  <p>Komunitas private Ravenze.co.<br>Akses grup hanya diberikan setelah pengisian formulir.</p>
 
-  <!-- WELCOME CARD -->
-  <div class="card hero">
-    <h1>Selamat Datang di Grup<br><span>Ravenze.co</span></h1>
-    <p>
-      Komunitas private Ravenze.co.<br>
-      Akses grup hanya diberikan setelah pengisian formulir.
-    </p>
+  <form id="accessForm">
+    <label>Nama</label>
+    <input name="nama" type="text" placeholder="Masukkan nama" required>
 
-    <button id="waBtn" class="btn locked" disabled>
-      🔒 Masuk Grup WhatsApp
-    </button>
-    <small id="lockText">Isi formulir untuk membuka akses</small>
-  </div>
+    <label>Nomor HP</label>
+    <input name="hp" type="text" placeholder="Masukkan nomor HP" required>
 
-  <!-- FORM -->
-  <form
-    id="accessForm"
-    action="https://docs.google.com/forms/d/e/1FAIpQLSerpOaWgy9ixxV7XYGaOHq2RznAF2-v9f4RpK_nIB5sopxB1A/formResponse"
-    method="POST"
-    target="hidden_iframe"
-    onsubmit="submitted=true;"
-  >
+    <label>Entry Code</label>
+    <input name="entryCode" type="text" placeholder="Masukkan kode" required>
 
-    <label>Nama Lengkap</label>
-    <input name="entry.1859656423" type="text" required>
-
-    <label>Codename</label>
-    <input name="entry.1378749359" type="text" required>
-
-    <label>Alasan Bergabung</label>
-    <textarea name="entry.1934636667" required></textarea>
-
-    <button type="submit" class="btn submit">Ajukan Akses</button>
+    <button type="submit">Ajukan Akses</button>
   </form>
 
-  <!-- IFRAME HIDDEN -->
-  <iframe
-    name="hidden_iframe"
-    style="display:none;"
-    onload="if(submitted){afterSubmit();}"
-  ></iframe>
+  <button id="waBtn" class="locked" disabled>🔒 Masuk Grup WA</button>
+  <small id="lockText">Isi form untuk membuka akses</small>
 
-  <!-- RULES -->
   <div class="card">
     <h2>Peraturan Grup</h2>
     <ul class="rules">
-      <li>Gunakan bahasa yang sopan</li>
-      <li>Dilarang spam</li>
-      <li>Hormati anggota</li>
+      <li>Gunakan bahasa yang sopan dan profesional</li>
+      <li>Dilarang spam dan promosi tanpa izin</li>
+      <li>Hormati privasi anggota lain</li>
       <li>Ikuti arahan admin</li>
     </ul>
   </div>
-
 </div>
-
-<script>
-  let submitted = false;
-</script>
 
 <script src="script.js"></script>
 </body>
