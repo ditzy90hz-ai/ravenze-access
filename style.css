@@ -1,101 +1,81 @@
-* {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
 body {
-  margin: 0;
-  background: #f3f7fb;
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin:0;
 }
 
 .container {
-  max-width: 720px;
-  margin: auto;
+  width: 90%;
+  max-width: 400px;
   padding: 20px;
+  background: #111;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease forwards;
 }
 
-.card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+h1, h2, label {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease forwards;
 }
 
-.hero {
-  text-align: center;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color: #fff;
-}
-
-.hero span {
-  color: #00e5ff;
-}
-
-.hero p {
-  margin: 12px 0 20px;
-}
-
-h2 {
-  color: #203a43;
-  margin-bottom: 15px;
-}
-
-label {
-  font-size: 14px;
-  margin-top: 10px;
-  display: block;
-}
+h1 { animation-delay: 0.2s; }
+label { animation-delay: 0.4s; }
+button { animation-delay: 0.6s; }
 
 input, textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  margin-top: 6px;
-}
-
-textarea {
-  resize: none;
-  height: 80px;
-}
-
-.btn {
-  padding: 12px 26px;
-  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
   border: none;
-  font-weight: 600;
-  cursor: pointer;
+  outline: none;
+  background: #222;
+  color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+input:focus, textarea:focus {
+  background: #333;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #00ffff66;
 }
 
-.submit {
+button {
   width: 100%;
-  margin-top: 15px;
-  background: #00e5ff;
-  color: #00333a;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.locked {
-  background: #999;
-  color: #fff;
-  cursor: not-allowed;
+#waBtn.locked {
+  background: #444;
+  color: #888;
+}
+#waBtn.unlocked {
+  background: #00ffff;
+  color: #111;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff88;
 }
 
-.unlocked {
-  background: #00e5ff;
-  color: #00333a;
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(30px);}
+  to { opacity:1; transform: translateY(0);}
 }
 
-small {
-  display: block;
-  margin-top: 10px;
-  opacity: .8;
-}
-
-.rules {
-  padding-left: 20px;
-}
-
-.rules li {
-  margin-bottom: 8px;
+@keyframes slideUp {
+  from { opacity:0; transform: translateY(20px);}
+  to { opacity:1; transform: translateY(0);}
 }
