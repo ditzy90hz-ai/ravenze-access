@@ -1,20 +1,19 @@
 const form = document.getElementById("accessForm");
 const waBtn = document.getElementById("waBtn");
 const lockText = document.getElementById("lockText");
-
 const WA_LINK = "https://chat.whatsapp.com/LP27HdRdbL61g41bwS5aGX";
 
-// cek status unlock
-if (localStorage.getItem("ravenze_unlocked") === "true") {
-  unlockWA();
-}
+// cek status unlock di localStorage
+if (localStorage.getItem("ravenze_unlocked") === "true") unlockWA();
 
-// ❌ JANGAN PREVENT DEFAULT
-// ❌ JANGAN BLOK SUBMIT
-function afterSubmit() {
-  localStorage.setItem("ravenze_unlocked", "true");
-  unlockWA();
-}
+// pakai event submit
+form.addEventListener("submit", () => {
+  // delay 2 detik supaya data bisa terkirim dulu ke Google
+  setTimeout(() => {
+    localStorage.setItem("ravenze_unlocked", "true");
+    unlockWA();
+  }, 2000); // 2 detik delay
+});
 
 function unlockWA() {
   waBtn.disabled = false;
