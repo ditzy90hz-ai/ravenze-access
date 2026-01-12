@@ -3,7 +3,7 @@ const waBtn = document.getElementById("waBtn");
 const lockText = document.getElementById("lockText");
 
 // LINK GRUP WA (ISI LINK ASLI)
-const WA_LINK = "https://chat.whatsapp.com/XXXXXXX";
+const WA_LINK = "https://chat.whatsapp.com/LP27HdRdbL61g41bwS5aGX";
 
 // cek status
 if (localStorage.getItem("ravenze_unlocked") === "true") {
