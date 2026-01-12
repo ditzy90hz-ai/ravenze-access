@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravenze.co Access</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- WELCOME CARD -->
+  <div class="card hero">
+    <h1>Selamat Datang di Grup<br><span>Ravenze.co</span></h1>
+    <p>
+      Komunitas private Ravenze.co.<br>
+      Akses grup hanya diberikan setelah pengisian formulir.
+    </p>
+
+    <!-- LOCKED BUTTON -->
+    <button id="waBtn" class="btn locked" disabled>
+      🔒 Masuk Grup WhatsApp
+    </button>
+    <small id="lockText">Isi formulir untuk membuka akses</small>
+  </div>
+
+  <!-- FORM CARD -->
+  <div class="card" id="formCard">
+    <h2>Formulir Akses</h2>
+
+    <form id="accessForm">
+      <label>Nama Lengkap</label>
+      <input type="text" required>
+
+      <label>Codename</label>
+      <input type="text" required>
+
+      <label>Alasan Bergabung</label>
+      <textarea required></textarea>
+
+      <button type="submit" class="btn submit">
+        Ajukan Akses
+      </button>
+    </form>
+  </div>
+
+  <!-- INFO CARD -->
+  <div class="card">
+    <h2>Peraturan Grup</h2>
+    <ul class="rules">
+      <li>Gunakan bahasa yang sopan dan profesional</li>
+      <li>Dilarang spam dan promosi tanpa izin</li>
+      <li>Hormati privasi anggota lain</li>
+      <li>Ikuti arahan admin</li>
+    </ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
